@@ -1,0 +1,39 @@
+{
+  "name": "newProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node",
+    "pretest": "node_modules/.bin/knex migrate:latest --env test",
+    "test": "jest --watchAll  --verbose=false",
+    "secure-mode": "jest --watchAll  --verbose=false",
+    "posttest": "node_modules/.bin/knex migrate:rollback --all --env test",
+    "lint": "eslint ./src/** test/** --fix",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.1",
+    "mariadb": "^2.4.1",
+    "pg": "^8.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "faker": "4.1.0",
+    "jest": "^26.1.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  }
+}
